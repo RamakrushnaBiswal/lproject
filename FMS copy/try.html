@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'poppins',sans-serif;
+        font-size:18px;
+    }
+    body{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .header{
+        height: 80px;
+        width: 70%;
+        background-color: goldenrod;
+        border-radius: 3px;
+        margin: 30px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .header .logo{
+        font-size: 30px;
+        font-weight: bold;
+        color: aliceblue;
+    }
+    .cart{
+        display: flex;
+        background-color: aliceblue;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 10px;
+        border-radius: 3px;
+        width: 80px;
+    }
+    .fa-solid{
+        color:goldenrod;
+    }
+    .cart p{
+        height: 22px;
+        width: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        display: flex;
+        width: 70%;
+        margin-bottom: 30px;
+    }
+    #root{
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20 px;
+
+    }
+    .sidebar{
+        width: 40%;
+        border-radius: 5px;
+        background-color: antiquewhite;
+        margin-left: 20px; ; 
+        padding: 15px;
+         text-align: center;
+   }
+   .head{
+    background-color:goldenrod;
+    border-radius: 3px;
+    height: 40px;
+   padding: 10px;
+   margin-bottom: 20px;
+   color:white;
+   display: flex;
+   align-items: center;
+   }
+   .foot{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <p class="logo">LOGO</p>
+        <div class="cart"><i class="fa-solid fa-cart-shoping"></i><p id="count">0</p></div>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+    <div class="sidebar">
+        <div class="head"><p>MY CART</p></div>
+        <DIV ID ="cartITEM">YOUR CART IS EMPTY</DIV>
+   <div class="foot">
+       <h3>TOTAL</h3>
+       <H2 ID ="total">₹0.00</H2>
+   </div>
+    </div>
+    
+    </div>
+    <script src="addtocart.js"></script>
+</body>

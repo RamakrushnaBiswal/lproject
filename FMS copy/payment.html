@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #amazonPayForm, #giftCardForm, #bankUPIForm {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Payment Method</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="paymentMethod">Select Payment Method   <img width="" height="60" src="https://img.icons8.com/glyph-neue/64/credit-card-front.png" alt="credit-card-front"/><img width="" height="64" src="https://img.icons8.com/windows/64/amazon-pay.png" alt="amazon-pay"/><img width="" height="64" src="https://img.icons8.com/ios-filled/50/bhim-upi.png" alt="bhim-upi"/></label>
+                                <select class="form-control" id="paymentMethod">
+                                    <option value="creditCard">Credit/Debit Card</option>
+                                    <option value="amazonPay">Amazon Pay</option>
+                                    <option value="giftCard">UPI</option>
+                                </select>
+                            </div>
+                                <div id="creditCardForm" class="payment-form">
+                                    <h6>Credit/Debit Card Payment</h6>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Number</label>
+                                        <input type="text" class="form-control" id="cardNumber" placeholder="Card Number" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="expiryDate">Expiry Date</label>
+                                                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="cvv">CVV</label>
+                                                <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardHolder">Card Holder</label>
+                                        <input type="text" class="form-control" id="cardHolder" placeholder="Card Holder Name" required>
+                                    </div>
+                                </div>
+                                <div id="amazonPayForm" class="payment-form">
+                                    <h6>AmazonPay</h6>
+                                    <div class="form-group">
+                                        <label for="amazonPayEmail">AmazonPay Email</label>
+                                        <input type="email" class="form-control" id="amazonPayEmail" placeholder="Your AmazonPay Email"required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="amazonPayPassword">AmazonPay Password</label>
+                                        <input type="password" class="form-control" id="amazonPayPassword" placeholder="Your AmazonPay Password"required>
+                                    </div>
+                                </div>                                
+                                <div id="giftCardForm" class="payment-form" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="giftCardCode">Upi Id</label>
+                                        <input type="text" class="form-control" id="giftCardCode" placeholder="Enter Your Upi Id"required>
+                                    </div>
+                                </div>
+                                <div id="totalAmountDisplay"></div>
+                                <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                                <a href="cart.php"><button type="button" class="btn btn-danger">Cancel Payment</button></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Add JavaScript logic to show/hide the payment method forms based on the selected payment method.
+        $(document).ready(function () {
+            $('#paymentMethod').change(function () {
+                var selectedMethod = $(this).val();
+                $('.payment-form').hide();
+                $('#' + selectedMethod + 'Form').show();
+            });
+        });
+
+        // Get the totalAmount query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const totalAmount = urlParams.get('totalAmount');
+
+        // Display the total amount on the page
+        if (totalAmount) {
+            document.getElementById('totalAmountDisplay').innerText = 'Total Amount: ₹' + totalAmount;
+        } else {
+            document.getElementById('totalAmountDisplay').innerText = 'Total Amount not found';
+        }
+    </script>
+</body>
+</html>

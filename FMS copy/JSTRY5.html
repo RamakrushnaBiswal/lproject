@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    
+    <div id="cart">
+        <!-- Cart items will be displayed here -->
+    </div>
+    
+    <p>Total Price: $<span id="totalPrice">0.00</span></p>
+
+    <h2>Add Products</h2>
+    <div>
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName">
+        
+        <label for="productPrice">Price:</label>
+        <input type="number" id="productPrice">
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" value="1">
+        
+        <button id="addToCartButton">Add to Cart</button>
+    </div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(itemName, itemPrice, itemQuantity) {
+            cart.push({ name: itemName, price: itemPrice, quantity: itemQuantity });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartContainer = document.getElementById("cart");
+            const totalPriceElement = document.getElementById("totalPrice");
+
+            // Clear the cart display
+            cartContainer.innerHTML = "";
+
+            let total = 0;
+
+            // Loop through cart items and display them
+            cart.forEach(item => {
+                const itemElement = document.createElement("div");
+                itemElement.textContent = `${item.name} (Quantity: ${item.quantity}) - $${item.price * item.quantity}`;
+                cartContainer.appendChild(itemElement);
+                total += parseFloat(item.price * item.quantity);
+            });
+
+            // Update the total price
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+
+        document.getElementById("addToCartButton").addEventListener("click", () => {
+            const productName = document.getElementById("productName").value;
+            const productPrice = parseFloat(document.getElementById("productPrice").value);
+            const quantity = parseInt(document.getElementById("quantity").value);
+
+            if (productName && !isNaN(productPrice) && !isNaN(quantity) && quantity > 0) {
+                addToCart(productName, productPrice, quantity);
+            } else {
+                alert("Please enter valid product information.");
+            }
+        });
+    </script>
+</body>
+</html>

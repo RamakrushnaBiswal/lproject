@@ -400,7 +400,7 @@ max-width: 100%;
         <h2>Product</h2>
         <div class="container">
             <?php
-            $query = "SELECT * FROM `threeshofa` ORDER BY id ASC";
+            $query = "SELECT * FROM `bar_lsofa` ORDER BY id ASC";
             $result = mysqli_query($conn, $query);
 
             if(mysqli_num_rows($result)>0){

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $host     = "127.0.0.1";
 $port     = 3310;
 $socket   = "MySQL";
@@ -217,40 +218,38 @@ max-width: 100%;
 <body><b>
   <header>
     <h1>PRODUCT</h1>
-    <h3 align="left"><a href="HOME.HTML"><button> HOME</button></a>  <a href="PRODUCT.HTML"><button> PRODUCT</button></a></h3>
-
-   
-  </header><nav>
+    <h3 align="left"><a href="HOME.php"><button> HOME</button></a>  <a href="PRODUCT.php"><button> PRODUCT</button></a></h3>
+  </header>
+  <nav>
   <div class="navbar">
   <div class="dropdown">
       <button class="dropbtn">Bedroom
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="POSTER BED.html">Poster Beds</a>
-        <a href="PLATFORM.html">Platform Beds</a>
-        <a href="BOX.html">Box Beds</a>
-        <a href="LOCAL.html">Local Beds</a>
-        <a href="BED TABLE.html">Bed Tables</a>
-        <a href="MATTERESS.html">Mattress </a>
-        <a href="PILLOW.html">Pillows</a>
-        <a href="DRESSING.HTML">Dressinng </a>
+        <a href="POSTER BED.php">Poster Beds</a>
+        <a href="PLATFORM.php">Platform Beds</a>
+        <a href="BOX.php">Box Beds</a>
+        <a href="LOCAL.php">Local Beds</a>
+        <a href="BED TABLE.php">Bed Tables</a>
+        <a href="MATTERESS.php">Mattress </a>
+        <a href="PILLOW.php">Pillows</a>
+        <a href="DRESSING.php">Dressinng </a>
       </div>
     </div>
   </div>
 </nav>
-  
   <div class="navbar">
     <div class="dropdown">
         <button class="dropbtn">Dining room   
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="DINING.HTML">Dining Sets</a>
-          <a href="DININGTABLE.html">Dining Tables</a>
-          <a href="BENCH.html">Benches</a>
-          <a href="CHAIR.html">Chairs</a>
-          <a href="SIDEBOARD.html">Sideboards</a>
+          <a href="DINING.php">Dining Sets</a>
+          <a href="DININGTABLE.php">Dining Tables</a>
+          <a href="BENCH.php">Benches</a>
+          <a href="CHAIR.php">Chairs</a>
+          <a href="SIDEBOARD.php">Sideboards</a>
           <a href="#">Local Dining</a>
         </div>
       </div>
@@ -262,14 +261,14 @@ max-width: 100%;
           </button>
           <div class="dropdown-content">
             
-            <a href="SOFACUM.html">Sofa Cum Bed</a>
-            <a href="3SOFA.html">3 Seater Sofa</a>
+            <a href="SOFACUM.php">Sofa Cum Bed</a>
+            <a href="3SOFA.php">3 Seater Sofa</a>
             <a href="2SOFA.php">2 Seater Sofa</a>
             <a href="1SEAT.php">Single Seater Sofa</a>
-            <a href="LSOFA.html">L shape Sofa</a>
-            <a href="EASY.html">Easy Chairs</a>
+            <a href="LSOFA.php">L shape Sofa</a>
+            <a href="EASY.php">Easy Chairs</a>
             <a href="TV.php">Tv Units</a>
-            <a href="TABLEBOX.html">Boxes</a>
+            <a href="TABLEBOX.php">Boxes</a>
           </div>
         </div>
       </div>
@@ -279,24 +278,24 @@ max-width: 100%;
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-              <a href="MANDIR.html">Mandir</a>
-              <a href="PRAYER.html">Prayer Unit</a>
-              <a href="RACK.html">Racks</a>
-              <a href="BENCH.html">Benches</a>
+              <a href="MANDIR.php">Mandir</a>
+              <a href="PRAYER.php">Prayer Unit</a>
+              <a href="RACK.php">Racks</a>
+              <a href="BENCH.php">Benches</a>
             </div>
           </div>
         </div>
         <div class="navbar">
           <div class="dropdown">
               <button class="dropbtn">Kitchen Room
-                                <i class="fa fa-caret-down"></i>
+              <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
-                <a href="KITCHEN.html">Kitchen Cabinet</a>
-                <a href="SIDEBOARD.html">Side Board</a>
-                <a href="STAND.html">Stands</a>
-                <a href="CHEST.html">Chest Drawer</a>  
-                <a href="KITASS.html">Accessories</a>
+                <a href="KITCHEN.php">Kitchen Cabinet</a>
+                <a href="SIDEBOARD.php">Side Board</a>
+                <a href="STAND.php">Stands</a>
+                <a href="CHEST.php">Chest Drawer</a>  
+                <a href="KITASS.php">Accessories</a>
               </div>
             </div>
           </div>
@@ -306,12 +305,11 @@ max-width: 100%;
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
-                <a href="STUDYTABLE.html">Study Table</a>
-                <a href="WFH.html">WFH Spaces</a>
-                <a href="EASY.html">Easy Chairs</a>
-                <a href="BOOKSELF.html">Bookselves</a>
-                <a href="CLOCK.html">Wall Clock</a>
-           
+                <a href="STUDYTABLE.php">Study Table</a>
+                <a href="WFH.php">WFH Spaces</a>
+                <a href="EASY.php">Easy Chairs</a>
+                <a href="BOOKSELF.php">Bookselves</a>
+                <a href="CLOCK.php">Wall Clock</a>
               </div>
             </div>
           </div>
@@ -321,12 +319,11 @@ max-width: 100%;
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="BOOKSELF.html">Bookselves</a>
-                  <a href="TABLEBOX.html">Boxes</a>
-                  <a href="CHEST.html">Chest Drawer</a>
-                  <a href="KITCHEN.html">Kitchen Cabinet</a>
-                  <a href="SIDEBOARD.html">Shoes Racks</a>
-
+                  <a href="BOOKSELF.php">Bookselves</a>
+                  <a href="TABLEBOX.php">Boxes</a>
+                  <a href="CHEST.php">Chest Drawer</a>
+                  <a href="KITCHEN.php">Kitchen Cabinet</a>
+                  <a href="SIDEBOARD.php">Shoes Racks</a>
                 </div>
               </div>
             </div>
@@ -336,11 +333,11 @@ max-width: 100%;
                   <i class="fa fa-caret-down"></i>
                 </button>
                     <div class="dropdown-content">
-                      <a href="OFFICE.html">Office Table</a>
-                      <a href="WFH.html">Wfh Spaces</a>
-                      <a href="CONFRENCE.html">Confrence Table</a>
-                      <a href="EASY.html">Easy Chairs</a>
-                      <a href="CLOCK.html">Wall Clock</a>
+                      <a href="OFFICE.php">Office Table</a>
+                      <a href="WFH.php">Wfh Spaces</a>
+                      <a href="CONFRENCE.php">Confrence Table</a>
+                      <a href="EASY.php">Easy Chairs</a>
+                      <a href="CLOCK.php">Wall Clock</a>
                     </div>
                   </div>
                 </div>
@@ -365,11 +362,11 @@ max-width: 100%;
                           <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-content">
-                            <a href="BARRACK.html">Bar  Rack</a>
-                            <a href="RACK.html"> Racks</a>
-                            <a href="BARCHAIR.html">Bar Stool</a>
-                            <a href="KITCHEN.html">Cabinet</a>
-                            <a href="TV.html">Tv Units</a>
+                            <a href="BARRACK.php">Bar  Rack</a>
+                            <a href="RACK.php"> Racks</a>
+                            <a href="BARCHAIR.php">Bar Stool</a>
+                            <a href="KITCHEN.php">Cabinet</a>
+                            <a href="TV.php">Tv Units</a>
                             
                           </div>
                         </div>
@@ -380,13 +377,13 @@ max-width: 100%;
                               <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content">
-                              <a href="LAMP.html">Table Lamps</a>
-                              <a href="STANDL.html">Floor Lamps</a>
-                              <a href="CELLING.html">Clling Light</a>
-                              <a href="CLOCK.html">Wall Clock</a>
-                              <a href="WALL.html">Wal Units</a>
+                              <a href="LAMP.php">Table Lamps</a>
+                              <a href="STANDL.php">Floor Lamps</a>
+                              <a href="CELLING.php">Clling Light</a>
+                              <a href="CLOCK.php">Wall Clock</a>
+                              <a href="WALL.php">Wal Units</a>
                            
-                              <a href="KITCHEN.html ">Kitchen</a>
+                              <a href="KITCHEN.php ">Kitchen</a>
                             </div>
                           </div>
                         </div>
@@ -410,7 +407,7 @@ max-width: 100%;
                 while($row = mysqli_fetch_array($result)){
                     ?>
                     <div class="product">
-                        <form action="TV.php?action=add&id=<?php echo $row["id"]?>" method="post">
+                        <form action="1SEAT.php?action=add&id=<?php echo $row["id"]?>" method="post">
                         <div class="product">
                             <img src="img/<?php echo $row["image"];?>" alt="">
                             <h3><?php echo $row["description"]?></h3>
@@ -428,14 +425,7 @@ max-width: 100%;
             }
 ?>
         </div>
-
-
-
-
     </main>
-
-
-    <footer></footer>
 </body>
 <script>
     function addToCart() {

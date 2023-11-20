@@ -30,19 +30,6 @@ if(isset($_GET["action"]) && $_GET["action"] == "delete"){
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="product.html">Shop Here</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.php">Cart</a>
-                </li>
-            </ul>
-        </div>
     </nav>
     <div class="container">
         <h3 class="mt-3">Cart</h3>
@@ -67,7 +54,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "delete"){
                         while($row = mysqli_fetch_array($result)) {
                             ?>
                             <tr>
-                                <td><img src="img/<?php echo $row["image"];?>" alt="" class="img-thumbnail" style="width: 100px; height: 100px;"></td>
+                                <td><img src="img/<?php echo $row["image"];?>" alt="product img" class="img-thumbnail" style="width: 100px; height: 100px;"></td>
                                 <td><?php echo $row["description"];?></td>
                                 <td>₹<?php echo $row["price"];?></td>
                                 <td><?php echo $row["quantity"];?></td>
